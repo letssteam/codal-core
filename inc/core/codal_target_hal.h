@@ -27,8 +27,11 @@ DEALINGS IN THE SOFTWARE.
 
 #include "platform_includes.h"
 
-extern "C"
-{
+#ifdef __cplusplus
+ extern "C" {
+#endif
+    void target_init();
+
     void target_enable_irq();
 
     void target_disable_irq();
@@ -90,7 +93,9 @@ extern "C"
      */
     short unsigned int __sync_fetch_and_add_2 (volatile void *ptr, short unsigned int value);
 
+#ifdef __cplusplus
 }
+#endif
 
 
 #endif
