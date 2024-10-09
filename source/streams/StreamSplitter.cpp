@@ -57,8 +57,8 @@ int SplitterChannel::pullRequest()
 ManagedBuffer SplitterChannel::resample(ManagedBuffer _in, uint8_t* buffer, int length)
 {
     // Going the long way around - drop any extra samples...
-    float inRate  = parent->upstream.getSampleRate();
-    float outRate = sampleRate;
+    float inRate       = parent->upstream.getSampleRate();
+    float outRate      = sampleRate;
 
     int inFmt          = parent->upstream.getFormat();
     int bytesPerSample = DATASTREAM_FORMAT_BYTES_PER_SAMPLE(inFmt);
@@ -85,8 +85,8 @@ ManagedBuffer SplitterChannel::resample(ManagedBuffer _in, uint8_t* buffer, int 
     int oversample_offset = 0;
     int oversample_step   = (totalSamples * CONFIG_SPLITTER_OVERSAMPLE_STEP) / samplesPerOut;
 
-    uint8_t* inPtr  = &_in[0];
-    uint8_t* outPtr = output;
+    uint8_t* inPtr        = &_in[0];
+    uint8_t* outPtr       = output;
     while (outPtr - output < length) {
         int a = StreamNormalizer::readSample[inFmt](
             inPtr + ((int)(oversample_offset / CONFIG_SPLITTER_OVERSAMPLE_STEP) * bytesPerSample));

@@ -55,7 +55,7 @@ struct CompassCalibration {
     Sample3D scale;   // Scale factor to apply in each axis to accomodate 1st order directional fields.
     int radius;       // Indication of field strength - the "distance" from the centre to outmost sample.
 
-    CompassCalibration() : centre(), scale(1024, 1024, 1024) { radius = 0; }
+    CompassCalibration() : centre(), scale(1'024, 1'024, 1'024) { radius = 0; }
 };
 
 /**

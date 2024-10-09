@@ -28,56 +28,57 @@ DEALINGS IN THE SOFTWARE.
 #include "CodalConfig.h"
 
 /**
-  * Error codes used in the codal device runtime.
-  * These may be returned from functions implemented in the codal device runtime.
-  */
-enum ErrorCode{
+ * Error codes used in the codal device runtime.
+ * These may be returned from functions implemented in the codal device runtime.
+ */
+enum ErrorCode {
 
     // No error occurred.
     DEVICE_OK = 0,
 
     // Invalid parameter given.
-    DEVICE_INVALID_PARAMETER = -1001,
+    DEVICE_INVALID_PARAMETER = -1'001,
 
     // Requested operation is unsupported.
-    DEVICE_NOT_SUPPORTED = -1002,
+    DEVICE_NOT_SUPPORTED = -1'002,
 
     // Device calibration errors
-    DEVICE_CALIBRATION_IN_PROGRESS = -1003,
-    DEVICE_CALIBRATION_REQUIRED = -1004,
+    DEVICE_CALIBRATION_IN_PROGRESS = -1'003,
+    DEVICE_CALIBRATION_REQUIRED    = -1'004,
 
-    // The requested operation could not be performed as the device has run out of some essential resource (e.g. allocated memory)
-    DEVICE_NO_RESOURCES = -1005,
+    // The requested operation could not be performed as the device has run out of some essential resource (e.g.
+    // allocated memory)
+    DEVICE_NO_RESOURCES = -1'005,
 
     // The requested operation could not be performed as some essential resource is busy (e.g. the display)
-    DEVICE_BUSY = -1006,
+    DEVICE_BUSY = -1'006,
 
     // The requested operation was cancelled before it completed.
-    DEVICE_CANCELLED = -1007,
+    DEVICE_CANCELLED = -1'007,
 
     // I2C Communication error occured (typically I2C module on processor has locked up.)
-    DEVICE_I2C_ERROR = -1010,
+    DEVICE_I2C_ERROR = -1'010,
 
     // The serial bus is currently in use by another fiber.
-    DEVICE_SERIAL_IN_USE = -1011,
+    DEVICE_SERIAL_IN_USE = -1'011,
 
     // The requested operation had no data to return.
-    DEVICE_NO_DATA = -1012,
+    DEVICE_NO_DATA = -1'012,
 
     // function is not implemented.
-    DEVICE_NOT_IMPLEMENTED = -1013,
+    DEVICE_NOT_IMPLEMENTED = -1'013,
 
     // SPI Communication error occured
-    DEVICE_SPI_ERROR = -1014,
+    DEVICE_SPI_ERROR = -1'014,
 
     // An invalid state was detected (i.e. not initialised)
-    DEVICE_INVALID_STATE = -1015,
+    DEVICE_INVALID_STATE = -1'015,
 };
 
 /**
-  * Error codes used in the codal device runtime.
-  */
-enum PanicCode{
+ * Error codes used in the codal device runtime.
+ */
+enum PanicCode {
     // PANIC Codes. These are not return codes, but are terminal conditions.
     // These induce a panic operation, where all code stops executing, and a panic state is
     // entered where the panic code is diplayed.

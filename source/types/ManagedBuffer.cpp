@@ -325,7 +325,7 @@ void ManagedBuffer::rotate(int offset, int start, int len)
     offset %= len;
     if (offset < 0) offset += len;
 
-    uint8_t* data = ptr->payload + start;
+    uint8_t* data    = ptr->payload + start;
 
     uint8_t* n_first = data + offset;
     uint8_t* first   = data;
